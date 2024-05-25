@@ -9,6 +9,15 @@ from helpers.MenuController import MenuController
 from helpers.Data import *
 from helpers.loadConfig import *
 
+def makeFile(fileName: str):
+    if(not exists(fileName)):
+        fp = open(fileName, 'x')
+        fp.close()
+
+makeFile('dominios.json')
+makeFile('perfiles.json')
+makeFile('servidores.json')
+
 data = Data()
 menus = MenuController()
 menus.setModel(data)

@@ -35,8 +35,8 @@ class Menu:
     
     def __showCommands(self):
         opLen = len(self.ops)
+        out = ""
         if opLen != 0:
-            out = ""
             comm = "<%s>"+" "*self.tab+"[%i]</%s> %s\n"
             i = 1
             hasPrevOp = True if self.page > 0 else False
@@ -58,8 +58,8 @@ class Menu:
                 out += comm % (self.oColor, 8, self.oColor, "← Previo")
             if hasNextOp:
                 out += comm % (self.oColor, 9, self.oColor, "Siguiente →")
-            out += "\n"+comm % ("yellow", 0, "yellow", "Salir")
-            print(HTML(out))
+        out += "\n"+comm % ("yellow", 0, "yellow", "Salir")
+        print(HTML(out))
     
     def __showContent(self):
         if self.content != "":
